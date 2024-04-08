@@ -7,14 +7,20 @@
                 "type": "linear",
                 "position": "bottom",
                 "ticks": {
-                    "beginAtZero": true
+                    "beginAtZero": true,
+                    "font": {
+                        "size": 12 
+                    }
                 }
             }
         ],
         "yAxes": [
             {
                 "ticks": {
-                    "beginAtZero": true
+                    "beginAtZero": true,
+                    "font": {
+                        "size": 10 
+                    }
                 }
             }
         ]

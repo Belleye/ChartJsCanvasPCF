@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Belleye" constructor="ChartsJsCanvasPCF" version="0.0.13" display-name-key="ChartsJsCanvasPCF" description-key="ChartsJsCanvasPCF description" control-type="standard" >
+  <control namespace="Belleye" constructor="ChartsJsCanvasPCF" version="0.0.14" display-name-key="ChartsJsCanvasPCF" description-key="ChartsJsCanvasPCF description" control-type="standard" >
     <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
     If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
     Example1:
@@ -21,7 +21,9 @@
     <property name="data" display-name-key="data" description-key="data JSON in string" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="options" display-name-key="options" description-key="options JSON in string" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="type" display-name-key="type" description-key="chart type" of-type="SingleLine.Text" usage="bound" required="true" />
-
+    <property name="labelSize" display-name-key="Label Size" description-key="Size of the label" of-type="Whole.None" usage="bound" required="true" />
+    <property name="fontType" display-name-key="Font Type" description-key="Type of the font" of-type="SingleLine.Text" usage="bound" required="true" />
+    
     <property name="selectedItem" display-name-key="Selected Item" description-key="The ID of the selected item" of-type="SingleLine.Text" usage="output" />
     <property name="lastSelected" display-name-key="Selected Time" description-key="Unix epoch of the selection" of-type="SingleLine.Text" usage="output" />
     <!--

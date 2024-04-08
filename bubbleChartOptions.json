@@ -1,0 +1,22 @@
+{
+    "responsive": true,
+    "maintainAspectRatio": false,
+    "scales": {
+        "xAxes": [
+            {
+                "type": "linear",
+                "position": "bottom",
+                "ticks": {
+                    "beginAtZero": true
+                }
+            }
+        ],
+        "yAxes": [
+            {
+                "ticks": {
+                    "beginAtZero": true
+                }
+            }
+        ]
+    }
+}

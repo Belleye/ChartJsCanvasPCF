@@ -1,0 +1,11 @@
+{
+    "responsive": true,
+    "maintainAspectRatio": false,
+    "scales": {
+      "y": {
+        "axis": "y",
+        "type": "linear",
+        "beginAtZero": true
+      }
+    }
+  }

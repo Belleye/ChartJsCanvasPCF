@@ -1,0 +1,10 @@
+{
+    "responsive": true,
+    "maintainAspectRatio": false,
+    "scales": {
+        "x": {
+            "type": "linear",
+            "position": "bottom"
+        }
+    }
+}

@@ -1,11 +1,12 @@
 import { Chart, registerables } from 'chart.js';
-//import { json } from 'stream/consumers';
 Chart.register(...registerables);
 
 interface IInputs {
     data: ComponentFramework.PropertyTypes.StringProperty;
     options: ComponentFramework.PropertyTypes.StringProperty;
     type: ComponentFramework.PropertyTypes.StringProperty;
+    labelSize: ComponentFramework.PropertyTypes.NumberProperty;
+    fontType: ComponentFramework.PropertyTypes.StringProperty; 
 }
 
 interface IOutputs {
@@ -99,6 +100,9 @@ export class ChartsJsCanvasPCF implements ComponentFramework.StandardControl<IIn
         try {
             const data = JSON.parse(context.parameters.data.raw || "{}");
             let options = JSON.parse(context.parameters.options.raw || "{}");
+            const labelSize = context.parameters.labelSize.raw || 10; 
+            const fontType = context.parameters.fontType.raw || 'Arial'; 
+
             options = {
                 ...options,
                 onClick: (event: any, elements: string | any[]) => {
@@ -116,6 +120,8 @@ export class ChartsJsCanvasPCF implements ComponentFramework.StandardControl<IIn
                 if (this._chart) {
                     this._chart.destroy();
                 }
+                Chart.defaults.font.size = labelSize;
+                Chart.defaults.font.family = fontType;
                 this._chart = new Chart(this._canvas, {
                     type: context.parameters.type.raw as any || 'bar',
                     data: data,

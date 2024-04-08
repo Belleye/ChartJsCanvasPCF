@@ -22,6 +22,9 @@ export class ChartsJsCanvasPCF implements ComponentFramework.StandardControl<IIn
     private _selectedItem: string;
     private _previousData: string;
     private _previousOptions: string;
+    private _previousType: any;
+    private _previousLabelSize: number;
+    private _previousFontType: string;
     private _lastSelected: string;
     private _notifyOutputChanged: () => void;
 
@@ -100,6 +103,7 @@ export class ChartsJsCanvasPCF implements ComponentFramework.StandardControl<IIn
         try {
             const data = JSON.parse(context.parameters.data.raw || "{}");
             let options = JSON.parse(context.parameters.options.raw || "{}");
+            const chartType = context.parameters.type.raw as any || 'bar';
             const labelSize = context.parameters.labelSize.raw || 10; 
             const fontType = context.parameters.fontType.raw || 'Arial'; 
 
@@ -116,19 +120,31 @@ export class ChartsJsCanvasPCF implements ComponentFramework.StandardControl<IIn
                 },
             };
 
-            if ((context.parameters.data.raw !== this._previousData) || (context.parameters.options.raw !== this._previousOptions)) {
+            if ((context.parameters.data.raw !== this._previousData) 
+                || (context.parameters.options.raw !== this._previousOptions)
+                || (chartType !== this._previousType)
+                || (labelSize !== this._previousLabelSize)
+                || (fontType !== this._previousFontType)
+            ) {
+                //private _previousType: string;
+                //private _previousLabelSize: number;
+                //private _previousFontType: string;
+                
                 if (this._chart) {
                     this._chart.destroy();
                 }
                 Chart.defaults.font.size = labelSize;
                 Chart.defaults.font.family = fontType;
                 this._chart = new Chart(this._canvas, {
-                    type: context.parameters.type.raw as any || 'bar',
+                    type: chartType,
                     data: data,
                     options: options
                 });
                 this._previousData = context.parameters.data.raw ?? "";
                 this._previousOptions = context.parameters.options.raw ?? "";
+                this._previousType = chartType;
+                this._previousLabelSize = labelSize;
+                this._previousFontType = fontType;
             }
         } catch (error) {
             console.error("Error parsing JSON for chart data or options:", error);

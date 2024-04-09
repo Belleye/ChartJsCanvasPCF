@@ -1,5 +1,5 @@
 # ChartJsCanvasPCF
-ChartJsCanvasPCF is a custom Power Apps component framework (PCF) control that uses Chart.js, an open-source JavaScript library for creating interactive charts on web pages. This control allows users to visualize and interact with data within Power Apps Canvas.
+ChartJsCanvasPCF is a custom Power Apps component framework (PCF) control that uses Chart.js, an open-source JavaScript library for creating interactive charts on web pages. This control allows users to visualize and interact with data within Power Apps Canvas. [Demo Video](https://youtu.be/Dom_B1EDjB4)
 
 ## Introduction to Chart.js
 Chart.js is a flexible JavaScript charting library for the modern web. It provides developers with the ability to create eight different types of animated and customizable charts. Chart.js uses the HTML5 canvas element for rendering, which offers great performance across all modern browsers.

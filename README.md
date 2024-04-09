@@ -1,4 +1,5 @@
 # ChartJsCanvasPCF
+![ChartJsCanvasPCF Screenshot](https://github.com/Belleye/ChartJsCanvasPCF/blob/main/Images/Screenshot%202024-04-09%20115404.png?raw=true)
 ChartJsCanvasPCF is a custom Power Apps component framework (PCF) control that uses Chart.js, an open-source JavaScript library for creating interactive charts on web pages. This control allows users to visualize and interact with data within Power Apps Canvas. [Demo Video](https://youtu.be/Dom_B1EDjB4)
 
 ## Introduction to Chart.js
